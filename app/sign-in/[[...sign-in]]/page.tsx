@@ -16,7 +16,11 @@ export default function SignInPage() {
         <span className="text-xs text-neutral-400">DemLabs • Luis Dem</span>
       </div>
       <div className="relative z-10">
-        <SignIn appearance={{ elements: { rootBox: "shadow-2xl" } }} />
+        <SignIn
+          fallbackRedirectUrl="/chat"
+          forceRedirectUrl="/chat"
+          appearance={{ elements: { rootBox: "shadow-2xl" } }}
+        />
       </div>
     </main>
   );

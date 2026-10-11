@@ -16,7 +16,11 @@ export default function SignUpPage() {
         <span className="text-xs text-neutral-400">DemLabs • Luis Dem</span>
       </div>
       <div className="relative z-10">
-        <SignUp appearance={{ elements: { rootBox: "shadow-2xl" } }} />
+        <SignUp
+          fallbackRedirectUrl="/chat"
+          forceRedirectUrl="/chat"
+          appearance={{ elements: { rootBox: "shadow-2xl" } }}
+        />
       </div>
     </main>
   );
