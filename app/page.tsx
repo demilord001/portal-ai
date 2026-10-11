@@ -42,10 +42,10 @@ export default function LandingPage() {
               <div className="flex items-center gap-1.5">
                 <span className="font-bold text-base tracking-tight text-white">PORTAL.AI</span>
                 <span className="rounded-full bg-indigo-500/20 px-1.5 py-0.2 text-[10px] font-mono font-semibold text-indigo-400">
-                  v2.5
+                  v1.0
                 </span>
               </div>
-              <span className="text-[10px] font-medium text-neutral-400">DemLabs • Luis Dem</span>
+              <span className="text-[10px] font-medium text-neutral-400">DemLabs</span>
             </div>
           </Link>
 
@@ -59,9 +59,6 @@ export default function LandingPage() {
             </a>
             <a href="#architecture" className="hover:text-white transition-colors">
               Architecture
-            </a>
-            <a href="#demlabs" className="hover:text-white transition-colors">
-              DemLabs
             </a>
           </nav>
 
@@ -91,7 +88,7 @@ export default function LandingPage() {
           <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
           <span className="font-semibold text-white">Next-Gen Assistance</span>
           <span className="text-neutral-500">•</span>
-          <span>Architected by Luis Dem @ DemLabs</span>
+          <span>Architected @ DemLabs</span>
         </div>
 
         {/* Hero Title */}
@@ -104,9 +101,7 @@ export default function LandingPage() {
 
         {/* Hero Subtitle */}
         <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-neutral-400 leading-relaxed font-light">
-          The ultimate access to next-gen AI assistance. Orchestrated with the reasoning depth of{" "}
-          <strong className="text-neutral-200">Grok (xAI)</strong>, selective real-time routing via{" "}
-          <strong className="text-neutral-200">Tavily Web Search</strong>, and multimodal attachment ingestion in an ultra-sleek Gemini-style workspace.
+          The ultimate access to next-gen AI assistance, selective real-time routing and multimodal attachment ingestion in an ultra-sleek workspace.
         </p>
 
         {/* CTA Group */}
@@ -160,7 +155,7 @@ export default function LandingPage() {
                     : "text-neutral-400 hover:text-neutral-200"
                 }`}
               >
-                Grok Architecture
+                AI Architecture
               </button>
               <button
                 type="button"
@@ -343,7 +338,7 @@ export default function LandingPage() {
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-pink-500/10 text-pink-400 mb-4 group-hover:scale-110 transition-transform">
               <Layers className="h-5 w-5" />
             </div>
-            <h4 className="text-base font-semibold text-white mb-2">Gemini-Style UI System</h4>
+            <h4 className="text-base font-semibold text-white mb-2">Sleek UI System</h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
               Minimalist layout, glassmorphic floating bars, LaTeX math formatting, syntax-highlighted code blocks with copy buttons, and voice playback.
             </p>
