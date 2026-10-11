@@ -129,7 +129,7 @@ export default function LandingPage() {
           </Link>
 
           <Link
-            href="/sign-up"
+            href="/sign-up?redirect_url=/chat"
             className="flex items-center gap-2 rounded-2xl border border-neutral-800 bg-neutral-900/60 hover:bg-neutral-900 px-6 py-3.5 text-sm font-semibold text-neutral-200 hover:text-white backdrop-blur-md transition-all"
           >
             <span>Create Free Account</span>
@@ -494,7 +494,7 @@ export default function LandingPage() {
             <a href="#features" className="hover:text-white transition-colors">Features</a>
             <a href="#routing" className="hover:text-white transition-colors">Tavily Routing</a>
             <Link href="/chat" className="hover:text-white transition-colors">Chat Workspace</Link>
-            <Link href="/sign-in" className="hover:text-white transition-colors">Sign In</Link>
+            <Link href="/sign-in?redirect_url=/chat" className="hover:text-white transition-colors">Sign In</Link>
           </div>
 
           <div className="text-[11px] text-neutral-500">
