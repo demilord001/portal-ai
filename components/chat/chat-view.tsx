@@ -420,7 +420,7 @@ export function ChatInterface() {
                     <span>
                       {forceWebSearch
                         ? "Searching web with Tavily and synthesizing with Grok..."
-                        : "Thinking with Grok intelligence..."}
+                        : "Just a sec..."}
                     </span>
                   </div>
                 </div>
@@ -450,7 +450,7 @@ export function ChatInterface() {
                   }}
                   placeholder={
                     forceWebSearch
-                      ? "Search the web with Tavily & Grok..."
+                      ? "Search the web..."
                       : "Ask PORTAL.AI anything, attach files, or query code..."
                   }
                   rows={1}
