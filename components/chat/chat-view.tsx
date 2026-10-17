@@ -12,6 +12,7 @@ import {
   Copy,
   Check,
   RotateCcw,
+  Plus,
   FileText,
   Image as ImageIcon,
   Music,
@@ -180,13 +181,30 @@ export function ChatInterface() {
           fetchChats();
         }
       } else {
-        const errJson = await res.json();
+        const errJson = await res.json().catch(() => ({}));
         console.error("API error:", errJson);
+        const fallbackMsg: ChatMessage = {
+          id: `err_${Date.now()}`,
+          chatId: activeChatId || "new",
+          role: "assistant",
+          content: "I ran into a temporary hiccup processing your request. Please try sending your message again.",
+          createdAt: new Date().toISOString(),
+        };
+        setMessages((prev) => [...prev, fallbackMsg]);
       }
     } catch (err) {
       console.error("Failed to send message:", err);
+      const fallbackMsg: ChatMessage = {
+        id: `err_${Date.now()}`,
+        chatId: activeChatId || "new",
+        role: "assistant",
+        content: "Network or connection error. Please verify your connection and try again.",
+        createdAt: new Date().toISOString(),
+      };
+      setMessages((prev) => [...prev, fallbackMsg]);
     } finally {
       setIsLoading(false);
+      setTimeout(() => textareaRef.current?.focus(), 50);
     }
   };
 
