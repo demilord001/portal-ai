@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Show, UserButton } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { Show, UserButton, useAuth } from "@clerk/nextjs";
 import {
   Sparkles,
   ArrowRight,
@@ -23,7 +24,26 @@ import {
 } from "lucide-react";
 
 export default function LandingPage() {
+  const { isSignedIn, isLoaded } = useAuth();
+  const router = useRouter();
   const [activePreviewTab, setActivePreviewTab] = useState<"search" | "code" | "persona">("search");
+
+  useEffect(() => {
+    if (isLoaded && isSignedIn) {
+      router.replace("/chat");
+    }
+  }, [isLoaded, isSignedIn, router]);
+
+  if (isLoaded && isSignedIn) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-neutral-950 text-neutral-400">
+        <div className="flex items-center gap-3">
+          <div className="h-5 w-5 animate-spin rounded-full border-2 border-indigo-500 border-t-transparent" />
+          <span className="text-sm">Entering PORTAL workspace...</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen bg-neutral-950 text-neutral-100 selection:bg-indigo-500/30 selection:text-indigo-200 overflow-x-hidden font-sans">

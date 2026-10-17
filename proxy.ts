@@ -12,6 +12,18 @@ const isClerkConfigured =
 
 export default isClerkConfigured 
   ? clerkMiddleware(async (auth, req) => {
+      const { userId } = await auth();
+
+      // If user is already authenticated and visits "/" or auth routes, redirect to chat workspace
+      if (
+        userId &&
+        (req.nextUrl.pathname === "/" ||
+          req.nextUrl.pathname.startsWith("/sign-in") ||
+          req.nextUrl.pathname.startsWith("/sign-up"))
+      ) {
+        return NextResponse.redirect(new URL("/chat", req.url));
+      }
+
       if (isProtectedRoute(req)) {
         await auth.protect();
       }
