@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Show, UserButton } from "@clerk/nextjs";
 import {
   Sparkles,
   ArrowRight,
@@ -65,7 +65,7 @@ export default function LandingPage() {
 
           {/* Action CTAs */}
           <div className="flex items-center gap-3">
-            <SignedOut>
+            <Show when="signed-out">
               <Link
                 href="/sign-in?redirect_url=/chat"
                 className="hidden sm:inline-flex rounded-xl px-4 py-2 text-xs font-semibold text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors"
@@ -79,8 +79,8 @@ export default function LandingPage() {
                 <span>Launch Portal</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
-            </SignedOut>
-            <SignedIn>
+            </Show>
+            <Show when="signed-in">
               <Link
                 href="/chat"
                 className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 text-xs font-semibold shadow-md shadow-indigo-600/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
@@ -89,7 +89,7 @@ export default function LandingPage() {
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
               <UserButton />
-            </SignedIn>
+            </Show>
           </div>
         </div>
       </header>
